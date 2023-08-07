@@ -1,17 +1,4 @@
-=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
-CIS 1200 Game Project README
-PennKey: _______
-=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
-
-===================
-=: Core Concepts :=
-===================
-
-- List the four core concepts, the features they implement, and why each feature
-  is an appropriate use of the concept. Incorporate the feedback you got after
-  submitting your proposal.
-
-  1. 2D Arrays - used a 2D array of integers for the 6 by 6 grid/board, and each
+1. 2D Arrays - used a 2D array of integers for the 6 by 6 grid/board, and each
   empty cell is represented with the number 0 (even though 0 itself does not appear
   on the grid). Each non-empty cell is represented by some power of 2 all the way
   to 2^13 = 8192.
@@ -39,20 +26,6 @@ PennKey: _______
    - The player loses when there are no empty tiles and player is unable to move
    in any direction.
 
-===============================
-=: File Structure Screenshot :=
-===============================
-- Include a screenshot of your project's file structure. This should include
-  all of the files in your project, and the folders they are in. You can
-  upload this screenshot in your homework submission to Gradescope, named
-  "file_structure.png".
-
-=========================
-=: Your Implementation :=
-=========================
-
-- Provide an overview of each of the classes in your code, and what their
-  function is in the overall game.
 
 Game.java class - The Game.java class contains a main method that initializes a
 Runnable object with an instance of Run8192, and then uses SwingUtilities.invokeLater
@@ -91,33 +64,3 @@ keys and their respective alphabetic counterparts (A, D, W, S). The tests also c
 edge cases like checking if the board is full without an 8192 tile and when the board
 is full with an 8192 tile. The tests use the assertArrayEquals method to verify the
 correctness of the game's state after each move.
-
-
-- Were there any significant stumbling blocks while you were implementing your
-  game (related to your design, or otherwise)?
-
-  One significant stumbling block for me was implementing the pop-up instructions
-  window, likely because I initially tried to build an entire class for the window
-  itself, but found a much simpler method in one of my already-built classes. Additionally,
-  combining tiles was difficult because I had to check if adjacent values of cells in
-  the 2D array were equivalent, and then combine them while emptying one of the cells.
-
-
-- Evaluate your design. Is there a good separation of functionality? How well is
-  private state encapsulated? What would you refactor, if given the chance?
-
-  There is definitely a good separation of functionality because I was able to scale down
-  the 8192 game's implementation into the Model-View-Controller framework. The private
-  state is encapsulated well. If given the chance, I would probably want to refactor the
-  way that I combine the tiles, so that I do not have entirely separate methods for moving
-  left, right, up, and down.
-
-
-========================
-=: External Resources :=
-========================
-
-- Cite any external resources (images, tutorials, etc.) that you may have used 
-  while implementing your game.
-
-  Didn't use external resources.
